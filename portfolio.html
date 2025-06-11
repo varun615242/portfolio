@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>varun_pothurajula Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --section-padding: 80px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .nav-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .nav-menu {
+            display: flex;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://picsum.photos/seed/portfolio/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 200px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: var(--section-padding);
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            font-size: 18px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .info-list {
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .info-item strong {
+            min-width: 150px;
+            color: var(--secondary-color);
+        }
+        
+        .skills {
+            margin-top: 30px;
+        }
+        
+        .skills-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            padding: 8px 15px;
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--primary-color);
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Resume Section */
+        .resume {
+            padding: var(--section-padding);
+        }
+        
+        .resume-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .resume-tab {
+            padding: 12px 30px;
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .resume-tab.active {
+            color: var(--primary-color);
+        }
+        
+        .resume-tab.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .resume-content {
+            position: relative;
+        }
+        
+        .resume-item {
+            display: none;
+        }
+        
+        .resume-item.active {
+            display: block;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: #e0e0e0;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .timeline-content .date {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .timeline-content p {
+            margin-bottom: 10px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: var(--section-padding);
+            background-color: #f9f9f9;
+        }
+        
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: transparent;
+            border: 1px solid #e0e0e0;
+            border-radius: 30px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-item:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .project-info .category {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 14px;
+        }
+        
+        .project-info p {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .project-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .project-links a i {
+            margin-right: 5px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item i {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+        
+        .contact-text p {
+            color: var(--text-light);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ecf0f1;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            color: #ecf0f1;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-bottom: 30px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 15px 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .hero {
+                padding: 150px 0;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Varun<span>Pothurajula</span></div>
+                <div class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Academic Portfolio</p>
+                <h1 class="hero-title">Varun Pothurajula</h1>
+                <p class="hero-description">A highly motivated and results-oriented final-year Bachelor of Technology student in Computer Science Engineering with a strong foundation in software development, web development, and data analysis.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Contact Me</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/varun-pothurajula" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/varun_pothurajula" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:varun.pothurajuladi@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Get to know me better</p>
+            </div>
+            <div class="about-content">
+            <div class="about-image">
+    <img src="varun_img.png" alt="Varun Pothurajula" class="w-12 h-12 rounded-full object-cover" />
+</div>
+
+
+                <div class="about-text">
+                    <h3>Software Engineer | Web Developer | Data Analyst</h3>
+                    <p>I am a highly motivated and results-oriented final-year Bachelor of Technology student in Computer Science Engineering with a proven track record of academic excellence and a strong foundation in software development, web development, and data analysis.</p>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <strong>Name:</strong>
+                            <span>Varun Pothurajula</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Email:</strong>
+                            <span>varun.pothurajuladi@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Phone:</strong>
+                            <span>+91 9618165149</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Location:</strong>
+                            <span>1-16/1, Bitturpalle, Bheemini, Mancherial (TS) – 504273</span>
+                        </div>
+                    </div>
+                    <div class="skills">
+                        <h4 class="skills-title">Technical Skills</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Jupyter Notebook</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Windows</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume" id="resume">
+        <div class="container">
+           <div class="section-title">
+    <h2>My Resume</h2>
+    <p>My education, experience, and skills</p>
+    
+    <a href="varun_resume.pdf" target="_blank" class="inline-block px-4 py-2 mt-4 text-purple-600 font-semibold hover:text-purple-800 transition">
+    View / Download Resume (PDF)
+</a>
+
+
+
+
+
+</div>
+
+            <div class="resume-tabs">
+                <button class="resume-tab active" data-tab="education">Education</button>
+                <button class="resume-tab" data-tab="experience">Experience</button>
+                <button class="resume-tab" data-tab="projects">Projects</button>
+                <button class="resume-tab" data-tab="certifications">Certifications</button>
+            </div>
+            <div class="resume-content">
+                <div class="resume-item active" id="education">
+                    <div class="timeline">
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <span class="date">2023 – 2026 (Expected)</span>
+                                <h3>BE in Computer Science & Engineering</h3>
+                                <p>Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad</p>
+                                <p><strong>CGPA:</strong> 8.99 (Up to 6th Semester)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <span class="date">2020 – 2023</span>
+                                <h3>Diploma in Computer Engineering</h3>
+                                <p>Singareni Collieries Polytechnic, Mancherial (TS)</p>
+                                <p><strong>CGPA:</strong> 9.8</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <span class="date">2020</span>
+                                <h3>SSC (X Class)</h3>
+                                <p>Zilla Parishad Secondary School, Bheemini, Mancherial (TS)</p>
+                                <p><strong>CGPA:</strong> 9.8</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-item" id="experience">
+                    <div class="timeline">
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <span class="date">Dec 2022 – May 2023</span>
+                                <h3>Industrial Trainee</h3>
+                                <p>Singareni Collieries Company Limited (SCCL), Mancherial</p>
+                                <ul>
+                                    <li>Gained hands-on experience in software development and IT operations.</li>
+                                    <li>Assisted in the development of internal web interfaces.</li>
+                                    <li>Participated in application testing and data reporting tasks.</li>
+                                    <li>Contributed to improving IT infrastructure and processes.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-item" id="projects">
+                    <div class="timeline">
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <span class="date">2023</span>
+                                <h3>Responsive Personal Portfolio Website</h3>
+                                <p>Technologies: HTML5, CSS3, JavaScript, Tailwind CSS</p>
+                                <p>Description: A personal portfolio website showcasing my projects, skills, and experience. The website is fully responsive and optimized for all devices.</p>
+                                <p>Features: Project showcase, contact form, smooth scrolling, mobile responsiveness.</p>
+                                <p><a href="#" class="btn btn-secondary" style="padding: 5px 10px; font-size: 14px;">View Project</a></p>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <span class="date">2023</span>
+                                <h3>Mik-VLAN – VLAN Architecture for Network Segmentation</h3>
+                                <p>Technologies: MikroTik RouterOS, Network Simulation Tools</p>
+                                <p>Description: Designed and implemented a Virtual LAN (VLAN) architecture using MikroTik routers to improve network performance, security, and manageability.</p>
+                                <p>Outcome: Successfully segmented the network into different VLANs, reducing broadcast traffic and enhancing security.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <span class="date">2024</span>
+                                <h3>IoT-Based Crop Protection System (Web Dashboard Contributor)</h3>
+                                <p>Technologies: HTML, CSS, JavaScript, IoT Sensors (Conceptual/Implemented)</p>
+                                <p>Description: Developed a web dashboard interface for real-time monitoring and control of an IoT-based crop protection system.</p>
+                                <p>Contribution: Focused on the front-end development, creating an intuitive and responsive interface to display sensor data and control actuators.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <span class="date">2024</span>
+                                <h3>Student Performance Data Analysis</h3>
+                                <p>Technologies: Python (Pandas, NumPy, Matplotlib, Seaborn), Jupyter Notebook, SQL</p>
+                                <p>Description: Analyzed a student performance dataset to identify factors affecting student scores and visualize the results.</p>
+                                <p>Objective: Explored relationships between study hours, attendance, and exam results using statistical analysis and data visualization techniques.</p>
+                                <p>Dataset: Kaggle – Student Performance Dataset</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <span class="date">2025</span>
+                                <h3>Weather App Using OpenWeatherMap API</h3>
+                                <p>Technologies: HTML, CSS, JavaScript (Fetch API)</p>
+                                <p>Description: Developed a weather application that fetches and displays real-time weather information for any city using the OpenWeatherMap API.</p>
+                                <p>Features: City search, current weather conditions, 5-day forecast.</p>
+                                <p><a href="#" class="btn btn-secondary" style="padding: 5px 10px; font-size: 14px;">View Project</a></p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <span class="date">2025</span>
+                                <h3>To-Do List App with Local Storage</h3>
+                                <p>Technologies: HTML, CSS, JavaScript (Local Storage API)</p>
+                                <p>Description: Created a simple yet functional to-do list application that allows users to add, delete, and mark tasks as completed.</p>
+                                <p>Features: Task management, local storage persistence, user-friendly interface.</p>
+                                <p><a href="#" class="btn btn-secondary" style="padding: 5px 10px; font-size: 14px;">View Project</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-item" id="certifications">
+                    <div class="timeline">
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <span class="date">2023</span>
+                                <h3>Web Development</h3>
+                                <p>Internshala Trainings</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <span class="date">2023</span>
+                                <h3>Programming in Java</h3>
+                                <p>Infosys Springboard</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <span class="date">2023</span>
+                                <h3>Data Science and Machine Learning Basics</h3>
+                                <p>Infosys Springboard</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <span class="date">2023</span>
+                                <h3>AWS Cloud Practitioner Essentials</h3>
+                                <p>AWS Training</p>
+                                <p>Highly recommended for placement advantage in MNCs like TCS Digital, Wipro Elite, Infosys SE role - Free on AWS Training</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <span class="date">2023</span>
+                                <h3>SQL Fundamentals</h3>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <span class="date">2023</span>
+                                <h3>Agile & Scrum Fundamentals</h3>
+                                <p>Coursera/Udemy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+                <p>Check out my recent work</p>
+            </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="data">Data Analysis</button>
+                <button class="filter-btn" data-filter="iot">IoT</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item" data-category="web">
+                    <div class="project-image">
+                        <img src="portfolio.png" alt="Responsive Personal Portfolio Website">
+                    </div>
+                    <div class="project-info">
+                        <h3>Responsive Personal Portfolio Website</h3>
+                        <span class="category">Web Development</span>
+                        <p>A personal portfolio website showcasing my projects, skills, and experience.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-category="web">
+                    <div class="project-image">
+                        <img src="weather.png" alt="Weather App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather App Using OpenWeatherMap API</h3>
+                        <span class="category">Web Development</span>
+                        <p>Developed a weather application that fetches and displays real-time weather information.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-category="web">
+                    <div class="project-image">
+                        <img src="todo.png" alt="To-Do List App">
+                    </div>
+                    <div class="project-info">
+                        <h3>To-Do List App with Local Storage</h3>
+                        <span class="category">Web Development</span>
+                        <p>Created a simple yet functional to-do list application with local storage persistence.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-category="data">
+                    <div class="project-image">
+                        <img src="studentana.png" alt="Student Performance Analysis">
+                    </div>
+                    <div class="project-info">
+                        <h3>Student Performance Data Analysis</h3>
+                        <span class="category">Data Analysis</span>
+                        <p>Analyzed a student performance dataset to identify factors affecting student scores.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">< class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-category="iot">
+                    <div class="project-image">
+                        <img src="crop.png" alt="IoT-Based Crop Protection System">
+                    </div>
+                    <div class="project-info">
+                        <h3>IoT-Based Crop Protection System</h3>
+                        <span class="category">IoT</span>
+                        <p>Developed a web dashboard interface for real-time monitoring and control of an IoT-based crop protection system.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-category="iot">
+                    <div class="project-image">
+                        <img src="mikvlan.png" alt="Mik-VLAN">
+                    </div>
+                    <div class="project-info">
+                        <h3>Mik-VLAN – VLAN Architecture</h3>
+                        <span class="category">IoT</span>
+                        <p>Designed and implemented a Virtual LAN (VLAN) architecture using MikroTik routers.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <p>Get in touch with me</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>varun.pothurajuladi@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>+91 9618165149</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>1-16/1, Bitturpalle, Bheemini, Mancherial (TS) – 504273</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin-in"></i>
+                        <div class="contact-text">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://linkedin.com/in/varun-pothurajula" target="_blank">varun-pothurajula</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div class="contact-text">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/varun_pothurajula" target="_blank">varun_pothurajula</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Varun Pothurajula</h3>
+                    <p>A highly motivated and results-oriented final-year Bachelor of Technology student in Computer Science Engineering with a strong foundation in software development, web development, and data analysis.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> varun.pothurajuladi@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 9618165149</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1-16/1, Bitturpalle, Bheemini, Mancherial (TS) – 504273</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Me</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://linkedin.com/in/varun-pothurajula" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                        <li><a href="https://github.com/varun_pothurajula" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="mailto:varun.pothurajuladi@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; Varun Pothurajula</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerOffset = 70;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu when clicking a link
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // Resume Tabs
+        const resumeTabs = document.querySelectorAll('.resume-tab');
+        const resumeItems = document.querySelectorAll('.resume-item');
+        
+        resumeTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.tab;
+                
+                // Remove active class from all tabs and items
+                resumeTabs.forEach(t => t.classList.remove('active'));
+                resumeItems.forEach(item => item.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding item
+                tab.classList.add('active');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+        
+        // Project Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.dataset.filter;
+                
+                // Filter projects
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = contactForm.querySelector('input[placeholder="Your Name"]').value;
+            const email = contactForm.querySelector('input[placeholder="Your Email"]').value;
+            const subject = contactForm.querySelector('input[placeholder="Subject"]').value;
+            const message = contactForm.querySelector('textarea').value;
+            
+            // Here you would typically send the form data to a server
+            // For this demo, we'll just show a success message
+            
+            // Create a success message element
+            const successMessage = document.createElement('div');
+            successMessage.style.backgroundColor = '#2ecc71';
+            successMessage.style.color = 'white';
+            successMessage.style.padding = '15px';
+            successMessage.style.borderRadius = '5px';
+            successMessage.style.marginTop = '20px';
+            successMessage.style.textAlign = 'center';
+            successMessage.textContent = 'Your message has been sent successfully!';
+            
+            // Clear the form and add the success message
+            contactForm.reset();
+            contactForm.appendChild(successMessage);
+            
+            // Remove the success message after 5 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 5000);
+        });
+        
+        // Active section on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
