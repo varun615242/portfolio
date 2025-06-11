@@ -1,7 +1,5 @@
 # Varun Pothurajula - Portfolio Website
 
-![Portfolio Banner](https://picsum.photos/seed/portfolio-banner/1200/300.jpg)
-
 **Varun Pothurajula** | Software Engineer | Web Developer | Data Analyst
 
 ## Contact Information
@@ -151,9 +149,3 @@ A highly motivated and results-oriented final-year Bachelor of Technology studen
 - Successfully managed event logistics, technical coordination, and student participant guidance
 - Presented IoT project demonstrations at intra-college events
 - Actively participated in coding competitions and hackathons
-
-## How to View This Website
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/varun_pothurajula.github.io.git
